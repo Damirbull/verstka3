@@ -1,0 +1,726 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto:wght@400;500;700&family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto:wght@400;500;700&display=swap');
+
+.html,
+.body {
+    height: 100%;
+    line-height: 1;
+    font-size: 16px;
+    color: black;
+
+}
+.wrapper{
+    min-width: 100%;
+    overflow: hidden;
+    white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+    overflow: hidden;    /* Скрываем часть текста, которая не помещается */
+    text-overflow: ellipsis; /* Добавляем многоточие для обрезанных текстов */
+}
+
+._container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+/*-------------Шапка-------------------------------------------------------------------*/
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  min-height: 104px;
+  align-items: center;
+}
+.header__container{
+  display: flex;
+  min-height: 104px;
+  align-items: center;
+}
+.header__menu{
+
+}
+.menu__list{
+  display: flex;
+}
+.menu{
+  margin: 5px 320px 0px 0px;
+}
+.menu__iteam{
+  margin: 0px 0px 0px 32px;
+  max-width: 150px;
+}
+.menu__link{
+  color: var(--Subtitle-Darkness-Gray, #969696);
+  font-family: Nunito Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 25.2px */
+  letter-spacing: 0.36px;
+  text-decoration: none;
+}
+.__logo {
+  position: relative;
+  display: inline-block;
+  font-size: 48px; /* Размер шрифта для текста */
+  display: flex;
+  min-height: 104px;
+  align-items: center;
+  font-weight: 400;
+  color: inherit;
+  margin: 0px 0px 0px 50px;
+  font-family: Tenor Sans;
+  text-decoration: none;
+}
+.badge {
+  color: var(--Subtitle-Darkness-Gray, #969696);/* Цвет текста для цифры, например, черный (#000) */
+  font-size: 18px; /* Размер текста в относительных единицах (зависящий от размера шрифта) */
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+}
+.button_blue {
+  flex: 0 0 252px;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--Subtitle-Darkness-Gray, #969696);
+  font-family: Nunito Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 25.2px */
+  letter-spacing: 0.36px;
+  text-decoration: none;
+  margin: 13px 0px 0px 0px;
+  max-width: 130px;
+  min-width: 130px;
+  
+}
+.menu__iteam:not(.no-underline),
+.header__button:not(.no-underline){
+  display: inline-block;
+  padding-bottom: 2px;
+  text-decoration-skip-ink: auto;
+  width: auto;
+  text-decoration: underline;
+  text-underline-offset: 0.6em;
+}
+.menu__link#arrow-link::after,
+.menu__link#arrow-link2::after,
+.menu__link#arrow-link3::after,
+.menu__link#arrow-link4::after,
+.menu__link#arrow-link5::after{
+  content: "^";
+  display: inline-block;
+  font-size: 20px;
+  transform: scaleY(-1);
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  left: 5px;
+  color: black;
+
+}
+.menu__link#arrow-link.active::after,
+.menu__link#arrow-link2.active::after,
+.menu__link#arrow-link3.active::after,
+.menu__link#arrow-link4.active::after,
+.menu__link#arrow-link5.active::after{
+  content: "^";
+  transform: scaleY(1);
+}
+.button_blue#arrow-link_button::after {
+  content: "^";
+  display: inline-block;
+  font-size: 20px;
+  transform: scaleY(-1);
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  left: 5px;
+  color: black;
+
+}
+.button_blue#arrow-link_button.active::after {
+  content: "^";
+  transform: scaleY(1);
+}
+
+.filter {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  display: none; /* Изначально скрыт */
+  z-index: -1; /* Значение z-index, чтобы был скрыт */
+  
+}
+
+.filter-1 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  display: none; /* Изначально скрыт */
+  z-index: -1; /* Значение z-index, чтобы был скрыт */  
+}
+
+
+.allo1 {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  color: #000;
+}
+
+.allo1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  transform: translateY(-50%);
+  border: 1px solid #000;
+  transition: background-color 0.3s ease;
+}
+
+.allo1.active::before {
+  background-color: black;
+}
+
+
+.allo1::after {
+  content: "\2713"; /* Юникод символ для галочки */
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color:white;
+  display: none;
+}
+
+.allo1.active::after {
+  display: block;
+}
+
+
+.filter-2 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  z-index: -1; /* Изначально скрыт */
+  opacity: 0; /* Добавляем opacity: 0, чтобы текст был невидимым */
+  pointer-events: none; /* Добавляем pointer-events: none, чтобы текст был некликабельным */
+}
+
+.filter-2.active {
+  z-index: 1; /* При активации меню изменяем z-index на 1 */
+  opacity: 1; /* При активации меню изменяем opacity на 1, чтобы текст стал видимым */
+  pointer-events: auto; /* При активации меню изменяем pointer-events на auto, чтобы текст стал кликабельным */
+}
+
+
+.filter-3 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  z-index: -1; /* Изначально скрыт */
+  opacity: 0; /* Добавляем opacity: 0, чтобы текст был невидимым */
+  pointer-events: none; /* Добавляем pointer-events: none, чтобы текст был некликабельным */
+}
+
+.filter-3.active {
+  z-index: 1; /* При активации меню изменяем z-index на 1 */
+  opacity: 1; /* При активации меню изменяем opacity на 1, чтобы текст стал видимым */
+  pointer-events: auto; /* При активации меню изменяем pointer-events на auto, чтобы текст стал кликабельным */
+}
+
+
+.filter-4 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  z-index: -1; /* Изначально скрыт */
+  opacity: 0; /* Добавляем opacity: 0, чтобы текст был невидимым */
+  pointer-events: none; /* Добавляем pointer-events: none, чтобы текст был некликабельным */
+}
+
+.filter-4.active {
+  z-index: 1; /* При активации меню изменяем z-index на 1 */
+  opacity: 1; /* При активации меню изменяем opacity на 1, чтобы текст стал видимым */
+  pointer-events: auto; /* При активации меню изменяем pointer-events на auto, чтобы текст стал кликабельным */
+}
+
+.filter-5 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  z-index: -1; /* Изначально скрыт */
+  opacity: 0; /* Добавляем opacity: 0, чтобы текст был невидимым */
+  pointer-events: none; /* Добавляем pointer-events: none, чтобы текст был некликабельным */
+}
+
+.filter-5.active {
+  z-index: 1; /* При активации меню изменяем z-index на 1 */
+  opacity: 1; /* При активации меню изменяем opacity на 1, чтобы текст стал видимым */
+  pointer-events: auto; /* При активации меню изменяем pointer-events на auto, чтобы текст стал кликабельным */
+}
+.allo4 {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+
+.allo4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  transform: translateY(-50%);
+  border: 1px solid #000;
+  transition: background-color 0.3s ease;
+}
+
+.allo4.active::before {
+  background-color: black;
+}
+.allo4::after {
+  content: "\2713"; /* Юникод символ для галочки */
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color:white;
+  display: none;
+}
+
+.allo4.active::after {
+  display: block;
+}
+.allo5 {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+
+.allo5::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  transform: translateY(-50%);
+  border: 1px solid #000;
+  transition: background-color 0.3s ease;
+}
+
+.allo5.active::before {
+  background-color: black;
+}
+
+
+.allo5::after {
+  content: "\2713"; /* Юникод символ для галочки */
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color:white;
+  display: none;
+}
+
+.allo5.active::after {
+  display: block;
+}
+
+.allo{
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Устанавливаем вертикальное направление */
+  align-items: center; /* Центрируем текст по горизонтали */
+  justify-content: center; /* Центрируем текст по вертикали */
+  padding: 15px; /* Добавляем отступы внутри блока */
+}
+
+.filter {
+  width: 279px;
+  height: 208px; 
+  background-color: #f5f5f5; 
+  left: 1200px;
+  top: 80px;
+}
+
+.filter-1 {
+  width: 229px;
+  height: 441px; 
+  background-color: #f5f5f5; 
+  left: 410px;
+  top: 80px;
+}
+
+.allo1{
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Устанавливаем вертикальное направление */
+  align-items: center; /* Центрируем текст по горизонтали */
+  justify-content: center; /* Центрируем текст по вертикали */
+  padding: 5px; /* Добавляем отступы внутри блока */
+  left: 30px;
+}
+
+
+.filter-4 {
+  width: 273px;
+  height: 396px; 
+  background-color: #f5f5f5; 
+  left: 710px;
+  top: 80px;
+}
+
+.allo4{
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Устанавливаем вертикальное направление */
+  align-items: center; /* Центрируем текст по горизонтали */
+  justify-content: center; /* Центрируем текст по вертикали */
+  padding: 5px; /* Добавляем отступы внутри блока */
+  left: 20px;
+}
+
+h1 {
+  position: relative;
+  left: 240px;
+  margin-top: -28px;
+  color: #969696;
+}
+
+h2 {
+  position: relative;
+  left: 240px;
+  margin-top: -57px;
+  color: #969696;
+}
+
+h3 {
+  position: relative;
+  left: 235px;
+  margin-top: -56px;
+  color: #969696;
+}
+h4 {
+  position: relative;
+  left: 235px;
+  margin-top: -56px;
+  color: #969696;
+}
+
+h5 {
+  position: relative;
+  left: 240px;
+  margin-top: -57px;
+  color: #969696;
+}
+
+h6 {
+  position: relative;
+  left: 235px;
+  margin-top: -56px;
+  color: #969696;
+}
+
+
+.filter-5 {
+  width: 283px;
+  height: 531px; 
+  background-color: #f5f5f5; 
+  left: 930px;
+  top: 80px;
+}
+
+.allo5{
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Устанавливаем вертикальное направление */
+  align-items: center; /* Центрируем текст по горизонтали */
+  justify-content: center; /* Центрируем текст по вертикали */
+  padding: 5px; /* Добавляем отступы внутри блока */
+  left: 20px;
+}
+
+
+#my-h7 {
+    position: relative;
+    left: 235px;
+    top: -55px;
+color: #969696;
+}
+
+#my-h8 {
+  position: relative;
+  left: 207px;
+  top: -94px;
+color: #969696;
+}
+
+#my-h9 {
+  position: relative;
+  left: 180px;
+  top: -134px;
+color: #969696;
+}
+
+
+.filter-2 {
+  width: 273px;
+  height: 396px; 
+  background-color: #f5f5f5; 
+  left: 457px;
+  top: 80px;
+}
+
+.allo2{
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Устанавливаем вертикальное направление */
+  align-items: center; /* Центрируем текст по горизонтали */
+  justify-content: center; /* Центрируем текст по вертикали */
+  padding: 9px; /* Добавляем отступы внутри блока */
+  right: 50px;
+  color: black;
+}
+
+
+/* Создаем маленький круг перед текстом */
+.allo2 {
+  position: relative;
+  text-decoration: none;
+}
+
+.allo2::before {
+  content: "";
+  display: inline-block;
+  width: 20px; /* Размер круга */
+  height: 20px;
+  border-radius: 50%; /* Делаем его круглым */
+  margin-right: 0px; /* Расстояние между кругом и текстом */
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 53%;
+  transform: translateY(-50%);
+  left: 76px; /* Расположение круга перед текстом */
+}
+
+
+/* Задаем цвет круга для каждого цвета */
+.allo2[data-color="Белый"]::before {
+  background-color: white; /* Белый */
+}
+
+.allo2[data-color="Серый"]::before {
+  background-color: gray; /* Серый */
+}
+
+.allo2[data-color="Чёрный"]::before {
+  background-color: black; /* Черный */
+}
+
+.allo2[data-color="Фиолетовый"]::before {
+  background-color: purple; /* Фиолетовый */
+}
+
+.allo2[data-color="Жёлтый"]::before {
+  background-color: yellow; /* Желтый */
+}
+
+.allo2[data-color="Оранжевый"]::before {
+  background-color: orange; /* Оранжевый */
+}
+
+.allo2[data-color="Зелёный"]::before {
+  background-color: green; /* Зеленый */
+}
+
+.allo2[data-color="Синий"]::before {
+  background-color: blue; /* Синий */
+}
+
+.allo2[data-color="Коричневый"]::before {
+  background-color: brown; /* Коричневый */
+}
+
+
+.allo2::after {
+  content: "\2713"; /* Юникод символ для галочки */
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  right: 181px;
+  color: transparent; /* Изменено на прозрачный цвет */
+}
+
+.allo2.active::after {
+  color: white; /* Изменено на белый цвет */
+}
+
+
+
+
+.filter-3 {
+  width: 403px;
+  height: 220px; 
+  background-color: #f5f5f5; 
+  left: 514px;
+  top: 80px;
+}
+
+.allo3{
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Устанавливаем вертикальное направление */
+  align-items: center; /* Центрируем текст по горизонтали */
+  justify-content: center; /* Центрируем текст по вертикали */
+  padding: 9px; /* Добавляем отступы внутри блока */
+  right: 50px;
+  color: black;
+}
+
+
+
+
+
+
+.range-slider {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.slider {
+  width: 91%;
+  position: relative;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  right: 1px;
+  top: -32px;
+}
+
+.thumb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.thumb.left {
+  background-color: white;
+  left: 0;
+}
+
+.thumb.right {
+  background-color:black;
+  right: 0;
+}
+
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.min-price{
+  border-bottom: 2px solid #000;
+  width: 50%;
+  font-family: Nunito Sans;
+  font-size: 16px;
+}
+
+.max-price{
+  border-bottom: 2px solid #000;
+  width: 33%;
+  position: relative;
+  font-family: Nunito Sans;
+  font-size: 16px;
+  right: 50px;
+}
+
+
+.menu__link.active {
+  color: black; /* Черный цвет текста для активной ссылки */
+}
+
+#selected-sizes{
+  position: relative;
+  right: 320px;
+  display: flex;
+  height: 38px;
+  padding: 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  top: 90px;
+  letter-spacing: 4px;
+
+}
+
+
+.woman{
+  position: relative;
+  left: 409px;
+  top: 111px;
+  width: 383px;
+  height: 511px;
+}
+
+
+.product-description {
+  position: absolute;
+  top: 100%; /* Разместить текст под изображением */
+  left: 0;
+  width: 100%; /* Занимать всю ширину родительского элемента */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+#myh10 {
+  position: relative;
+  left: -215px;
+  top: -86px;
+  color: var(--Total-Black, #282828);
+  font-family: Nunito Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 25.2px */
+  letter-spacing: 0.18px;
+}
